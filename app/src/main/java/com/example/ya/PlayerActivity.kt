@@ -1,17 +1,11 @@
 package com.example.ya
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
-import com.google.android.material.button.MaterialButton
 
 class PlayerActivity : AppCompatActivity() {
 
@@ -53,18 +47,6 @@ class PlayerActivity : AppCompatActivity() {
     play.setOnClickListener {
       playbackControl()
     }
-    val button = findViewById<Button>(R.id.justButton)
-    Glide.with(this)
-      .asDrawable()
-      .load("https://img.icons8.com/?size=2x&id=63807&format=png")
-      .into(
-        object : CustomTarget<Drawable>() {
-          override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
-            button.setCompoundDrawablesWithIntrinsicBounds( resource, null, null, null);
-          }
-          override fun onLoadCleared(placeholder: Drawable?) = Unit
-        },
-      )
   }
 
   override fun onPause() {
@@ -106,20 +88,20 @@ class PlayerActivity : AppCompatActivity() {
 
     mediaPlayer.setOnCompletionListener {
       Log.d("setOnCompletionListener", "setOnCompletionListener")
-      play.text = "PLAY"
+      play.text = getString(R.string.play)
       playerState = STATE_PREPARED
     }
   }
 
   private fun startPlayer() {
     mediaPlayer.start()
-    play.text = "PAUSE"
+    play.text = getString(R.string.pause)
     playerState = STATE_PLAYING
   }
 
   private fun pausePlayer() {
     mediaPlayer.pause()
-    play.text = "PLAY"
+    play.text = getString(R.string.play)
     playerState = STATE_PAUSED
   }
 }
