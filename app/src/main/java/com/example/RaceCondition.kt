@@ -1,7 +1,5 @@
 package com.example
 
-import java.util.concurrent.atomic.AtomicInteger
-
 // для правильной работы нужно синхронизовать обращение к x
 // или использовать AtomicInteger
 
@@ -9,13 +7,13 @@ import java.util.concurrent.atomic.AtomicInteger
 var x = 0
 
 fun main() {
-  val lock = Object()
+  //val lock = Object()
 
   val t1 = Thread {
     repeat(10000) {
       //x.incrementAndGet()
       //synchronized((lock)) {
-        x++
+      x++
       //}
     }
   }
@@ -24,7 +22,7 @@ fun main() {
     repeat(10000) {
       //x.decrementAndGet()
       //synchronized((lock)) {
-        x--
+      x--
       //}
     }
   }
