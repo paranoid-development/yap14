@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="false"
+        android:text="PLAY"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Theme.AppCompat.Dialog"
+        android:text="Icon Button"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="16dp"
+        app:icon="@drawable/ic_android_black_24dp"
+        app:iconGravity="textStart"/>
+
+    <Button
+        android:id="@+id/justButton"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Theme.AppCompat.Dialog"
+        android:text="Just Button"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="48dp"
+        app:icon="@drawable/ic_android_black_24dp"
+        app:iconGravity="textStart"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_android_black_24dp"
+        android:padding="4dp"
+        android:layout_gravity="right|bottom"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        />
+
+</FrameLayout>
