@@ -28,19 +28,19 @@ class PlayerActivity : AppCompatActivity() {
     setContentView(R.layout.activity_player)
     play = findViewById(R.id.playButton)
 
-    Thread {
-      // при пересоздании активности будет утечка, память для this не освободится
-      val x = this@PlayerActivity
-      Thread.sleep(60000)
-      Log.d("xxx", "$x")
-    }
-
-    // обращение к диску в UI потоке
-    val sharedPref = getPreferences(Context.MODE_PRIVATE)
-    with(sharedPref.edit()) {
-      putInt("someKey", 0)
-      commit()
-    }
+//    Thread {
+//      // при пересоздании активности будет утечка, память для this не освободится
+//      val x = this@PlayerActivity
+//      Thread.sleep(60000)
+//      Log.d("xxx", "$x")
+//    }
+//
+//    // обращение к диску в UI потоке
+//    val sharedPref = getPreferences(Context.MODE_PRIVATE)
+//    with(sharedPref.edit()) {
+//      putInt("someKey", 0)
+//      commit()
+//    }
 
     preparePlayer()
 
