@@ -30,7 +30,9 @@
 
 ![](images/thread.png)
 
-```agsl
+---
+
+```java
 //java
 
 public void synchronized myFun() {
@@ -41,26 +43,34 @@ private Object lock = new Object();
 
 public void myFun2() {
     synchronized(lock) {
-    ...
     }
 }
 
 public static synchronized myFun3() {
-...
 }
 ```
 
-```agsl
+```kotlin
 //kotlin
 val lock = Object()
 @Synchronized
-fun fun1() {
+fun myFun() {
+}
+
+fun myFun2() {
   synchronized(lock) {
-    
   }
 }
-```
 
+companion object {
+  @Synchronized
+  fun myFun3() {
+  }
+}
+
+
+```
+![](images/thread_lifecycle_java.jpeg)
 ```
 List<Integer> syncList = Collections.synchronizedList(new ArrayList<>());
 
