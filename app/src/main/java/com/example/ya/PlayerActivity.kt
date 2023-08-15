@@ -33,7 +33,7 @@ class PlayerActivity : AppCompatActivity() {
 //      val x = this@PlayerActivity
 //      Thread.sleep(60000)
 //      Log.d("xxx", "$x")
-//    }
+//    }.start()
 //
 //    // обращение к диску в UI потоке
 //    val sharedPref = getPreferences(Context.MODE_PRIVATE)
